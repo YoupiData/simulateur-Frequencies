@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulateur de don</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Simulateur de Don</h1>
+
+    <label for="type">Je suis :</label>
+    <select id="type" onchange="afficherOptionsParticulier()">
+        <option value="particulier">Un particulier</option>
+        <option value="entreprise">Une entreprise</option>
+    </select>
+
+    <span id="options-ifi" style="display: inline-block; margin-left: 20px;">
+        <label for="ifi">Régime :</label>
+        <select id="ifi">
+            <option value="sans">Sans IFI</option>
+            <option value="avec">Avec IFI</option>
+        </select>
+    </span>
+
+    <br><br>
+
+    <label for="montant">Montant du don (€) :</label>
+    <input type="number" id="montant" min="0">
+
+    <br><br>
+
+    <button onclick="calculer()">Calculer</button>
+
+    <h2>Résultats :</h2>
+
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <p id="reduction" style="margin-right: 0.5em;"></p>
+        <p id="info" style="font-style: italic; color: #555; display: flex; align-items: center;">
+            <span style="margin-right: 4px;">ℹ️</span><span id="info-text"></span>
+        </p>
+    </div>
+    
+    <p id="cout"></p>    
+
+    <script src="simulateur.js"></script>
+</body>
+</html>
